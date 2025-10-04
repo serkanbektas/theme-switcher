@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { ThemeSelector } from "@/components/theme-selector";
 import { Home, Video, Globe } from "lucide-react";
 import { getDefaultTheme } from "@/lib/utils";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export function Header() {
   const theme = getDefaultTheme();
@@ -34,8 +37,11 @@ export function Header() {
           </Link>
         </nav>
 
-        <ThemeSelector theme={theme} />
-      </div>
+
+        <div className="flex items-center gap-3">
+          <ModeToggle />
+          <ThemeSelector theme={theme} />
+        </div>      </div>
     </header>
   );
 }

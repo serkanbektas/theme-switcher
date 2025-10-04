@@ -1,8 +1,7 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import ThemeLoader from '@/components/theme-loader'
 
-// Mock theme components
+// Mock theme components - must be before imports
 vi.mock('@/themes/default', () => ({
   DefaultHome: () => <div>Default Home</div>,
   DefaultVideos: () => <div>Default Videos</div>,
@@ -26,6 +25,8 @@ vi.mock('@/themes/darkside', () => ({
     <div>Darkside Video Detail: {params.slug}</div>
   ),
 }))
+
+import ThemeLoader from '@/components/theme-loader'
 
 describe('ThemeLoader', () => {
   it('renders default home page', () => {

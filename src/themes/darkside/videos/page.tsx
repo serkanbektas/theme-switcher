@@ -8,11 +8,11 @@ import { Clock, Eye, Calendar, Tag } from "lucide-react";
 
 export default function DarksideVideosPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-[#121212] text-white">
+    <div className="flex min-h-screen flex-col bg-[#121212] text-white dark:bg-[#0a0a0a] dark:text-gray-100">
       <Header />
       <main className="flex-grow py-12">
         <div className="container mx-auto px-4">
-          <h1 className="mb-8 text-4xl font-bold text-[#bb86fc]">
+          <h1 className="mb-8 text-4xl font-bold text-[#bb86fc] dark:text-[#a370f7]">
             Videos - Dark Side Theme
           </h1>
 
@@ -21,7 +21,7 @@ export default function DarksideVideosPage() {
               <Link
                 href={`/videos/${video.id}`}
                 key={video.id}
-                className="overflow-hidden rounded-lg border border-[#333333] bg-[#1a1a1a] shadow-md transition-colors hover:border-[#bb86fc]"
+                className="overflow-hidden rounded-lg border border-[#333333] bg-[#1a1a1a] shadow-md transition-colors hover:border-[#bb86fc] dark:border-[#1a1a1a] dark:bg-[#0f0f0f] dark:hover:border-[#a370f7]"
               >
                 <div className="relative aspect-video">
                   <Image
@@ -31,26 +31,26 @@ export default function DarksideVideosPage() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                  <div className="absolute bottom-3 right-3 rounded bg-[#bb86fc]/80 px-2 py-1 text-sm text-white">
+                  <div className="absolute bottom-3 right-3 rounded bg-[#bb86fc]/80 px-2 py-1 text-sm text-white dark:bg-[#a370f7]/80">
                     {video.duration}
                   </div>
                 </div>
                 <div className="p-5">
-                  <h3 className="mb-2 text-xl font-semibold text-white">
+                  <h3 className="mb-2 text-xl font-semibold text-white dark:text-gray-100">
                     {video.title}
                   </h3>
-                  <p className="mb-4 text-gray-400">{video.description}</p>
-                  <div className="flex flex-wrap items-center justify-between text-sm text-gray-500">
+                  <p className="mb-4 text-gray-400 dark:text-gray-500">{video.description}</p>
+                  <div className="flex flex-wrap items-center justify-between text-sm text-gray-500 dark:text-gray-600">
                     <div className="flex items-center gap-1">
-                      <Eye size={14} className="text-[#bb86fc]" />
+                      <Eye size={14} className="text-[#bb86fc] dark:text-[#a370f7]" />
                       <span>{video.views}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Calendar size={14} className="text-[#bb86fc]" />
+                      <Calendar size={14} className="text-[#bb86fc] dark:text-[#a370f7]" />
                       <span>{video.date}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <Tag size={14} className="text-[#bb86fc]" />
+                      <Tag size={14} className="text-[#bb86fc] dark:text-[#a370f7]" />
                       <span>{video.category}</span>
                     </div>
                   </div>

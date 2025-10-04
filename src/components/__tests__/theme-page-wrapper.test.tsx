@@ -1,15 +1,16 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
-import ThemePageWrapper from '@/components/theme-page-wrapper'
-import * as utils from '@/lib/utils'
 
+// Mocks must be before imports
 vi.mock('@/lib/utils', () => ({
-  getDefaultTheme: vi.fn(() => 'default')
+  getDefaultTheme: () => 'default'
 }))
 
 vi.mock('@/components/theme-loader', () => ({
   default: () => <div>Loading theme...</div>
 }))
+
+import ThemePageWrapper from '@/components/theme-page-wrapper'
 
 describe('ThemePageWrapper', () => {
   it('renders loading state initially', () => {

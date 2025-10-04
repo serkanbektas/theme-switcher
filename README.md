@@ -33,7 +33,7 @@ A modern, responsive web application built with Next.js 15 that provides a beaut
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/serkanbektas/theme-switcher.git
 cd theme-switcher
 ```
 
